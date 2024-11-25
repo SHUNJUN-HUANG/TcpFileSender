@@ -49,12 +49,12 @@ void TcpFileSender::startTransfer()
 {
     localFile = new QFile(fileName);
     if (!localFile->open(QFile::ReadOnly))
-     {
+    {
         QMessageBox::warning(this,QStringLiteral("應用程式"),
-                              QStringLiteral("無法讀取 %1:\n%2.").arg(fileName)
-                              .arg(localFile->errorString()));
+                             QStringLiteral("無法讀取 %1:\n%2.").arg(fileName)
+                                 .arg(localFile->errorString()));
         return;
-     }
+    }
 
     totalBytes = localFile->size();
     QDataStream sendOut(&outBlock, QIODevice::WriteOnly);
@@ -93,6 +93,3 @@ TcpFileSender::~TcpFileSender()
 {
 
 }
-
-
-

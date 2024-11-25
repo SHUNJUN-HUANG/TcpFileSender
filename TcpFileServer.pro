@@ -4,15 +4,13 @@
 #
 #-------------------------------------------------
 
-QT       += core gui network
-
-greaterThan(QT_MAJOR_VERSION, 4): QT += widgets
+QT       += core gui network widgets
 
 TARGET = TcpFileServer
 TEMPLATE = app
 
+SOURCES += main.cpp \
+           tcpfiletransfer.cpp
 
-SOURCES += main.cpp\
-        tcpfileserver.cpp
-
-HEADERS  += tcpfileserver.h
+HEADERS  += \
+            tcpfiletransfer.h
